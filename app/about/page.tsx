@@ -174,16 +174,14 @@ export default function AboutPage() {
         Connect
       </h2>
       <div className="mt-8 flex flex-wrap gap-3">
-        {LINKEDIN_URL !== "" && (
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-lime-300 px-6 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
-          >
-            LinkedIn
-          </a>
-        )}
+        <a
+          href={LINKEDIN_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full bg-lime-300 px-6 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
+        >
+          LinkedIn
+        </a>
         <a
           href="mailto:rygold04@gmail.com?subject=Hello%20from%20your%20portfolio"
           className="rounded-full bg-lime-300 px-6 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
