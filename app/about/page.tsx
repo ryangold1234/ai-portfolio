@@ -24,6 +24,12 @@ const story = [
   },
   {
     year: "2026",
+    title: "EastCoastStudios — wall-art e-commerce",
+    text: "Same Shopify playbook, second client: a full-catalog SEO rewrite for a wall-art brand — tens of thousands of listings enriched with GPT-generated titles and meta descriptions, documented so the non-technical owner runs it solo.",
+    link: "/projects/eastcoast-studios",
+  },
+  {
+    year: "2026",
     title: "Bot Room + Midday Madness — multi-agent platforms",
     text: "Building multi-agent platforms: Bot Room, a real-time chat system where AI agents work alongside people every day, and an agent crew that runs the Midday Madness podcast's website and production operations.",
     link: "/projects/midday-madness",

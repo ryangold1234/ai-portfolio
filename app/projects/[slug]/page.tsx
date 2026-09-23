@@ -93,11 +93,82 @@ export default async function ProjectPage({
         <p className="mt-4 leading-relaxed text-zinc-400">
           {project.howItWorks}
         </p>
+        {project.pipeline.length > 0 && (
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            {project.pipeline.map((step, i) => (
+              <div key={step} className="flex items-center gap-2">
+                <span className="inline-flex items-center rounded-full border border-lime-300/30 bg-lime-300/10 px-4 py-2 text-sm font-medium text-lime-200">
+                  <span className="mr-2 font-mono text-xs text-lime-300/70">
+                    {i + 1}
+                  </span>
+                  {step}
+                </span>
+                {i < project.pipeline.length - 1 && (
+                  <span aria-hidden className="text-zinc-600">
+                    →
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </section>
+
+      {project.demo && (
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold tracking-tight">
+            See it in action
+          </h2>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <p className="font-mono text-xs uppercase tracking-widest text-zinc-500">
+                {project.demo.beforeTitle}
+              </p>
+              <ul className="mt-3 space-y-2 font-mono text-[13px] leading-relaxed text-zinc-400">
+                {project.demo.before.map((line) => (
+                  <li key={line} className="break-words">
+                    {line}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-lime-300/25 bg-lime-300/[0.05] p-6">
+              <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
+                {project.demo.afterTitle}
+              </p>
+              <ul className="mt-3 space-y-2 font-mono text-[13px] leading-relaxed text-zinc-200">
+                {project.demo.after.map((line) => (
+                  <li key={line} className="break-words">
+                    {line}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-zinc-500">{project.demo.note}</p>
+        </section>
+      )}
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold tracking-tight">Results</h2>
-        <ul className="mt-4 space-y-3">
+        {project.kpis.length > 0 && (
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {project.kpis.map((kpi) => (
+              <div
+                key={kpi.label}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
+              >
+                <p className="text-3xl font-bold tracking-tight text-lime-300">
+                  {kpi.value}
+                </p>
+                <p className="mt-1 text-sm leading-snug text-zinc-400">
+                  {kpi.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+        <ul className="mt-6 space-y-3">
           {project.results.map((r) => (
             <li key={r} className="flex gap-3 leading-relaxed text-zinc-400">
               <span aria-hidden className="mt-1 shrink-0 text-lime-300">
