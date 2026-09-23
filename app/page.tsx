@@ -37,7 +37,7 @@ export default function Home() {
           <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
             AI automation for small business
           </p>
-          <h1 className="mt-6 max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl">
+          <h1 className="mt-6 max-w-3xl text-balance text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl">
             I build AI agents that do{" "}
             <span className="text-lime-300">your work for you</span>.
           </h1>

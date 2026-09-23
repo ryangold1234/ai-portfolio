@@ -13,7 +13,7 @@ const budgets = ["Under $1k", "$1k–$5k", "$5k+", "Not sure yet"];
 const timelines = ["ASAP", "1–3 months", "Just exploring"];
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none transition-colors focus:border-lime-300/60";
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-zinc-100 placeholder:text-zinc-500 outline-none transition-colors focus:border-lime-300/60 sm:text-sm";
 
 export default function WorkWithMeForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(

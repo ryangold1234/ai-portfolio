@@ -50,7 +50,7 @@ export default function WorkWithMePage() {
       <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
         Work with me
       </p>
-      <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
+      <h1 className="mt-4 max-w-2xl text-balance text-4xl font-bold tracking-tight sm:text-5xl">
         Tell me what&apos;s eating your team&apos;s time.{" "}
         <span className="text-zinc-500">I&apos;ll tell you if I can kill it.</span>
       </h1>

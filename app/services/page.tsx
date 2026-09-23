@@ -74,7 +74,7 @@ export default function ServicesPage() {
         <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
           Services
         </p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="mt-4 max-w-3xl text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           I make and set up agents to do your work instead of you doing work.
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-zinc-400">

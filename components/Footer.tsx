@@ -8,7 +8,7 @@ export default function Footer() {
           <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
             AI consulting for small businesses
           </p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-balance text-3xl font-bold tracking-tight sm:text-4xl">
             Have a business problem AI could solve? Let&apos;s talk.
           </h2>
           <p className="mt-4 max-w-xl text-zinc-400">

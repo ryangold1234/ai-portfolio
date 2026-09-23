@@ -79,7 +79,7 @@ export default function Toolkit() {
                     key={skill.name}
                     onClick={() => setSelected(isActive ? null : skill.name)}
                     aria-pressed={isActive}
-                    className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                    className={`rounded-full border px-4 py-2.5 text-sm font-medium transition-all ${
                       isActive
                         ? "border-lime-300 bg-lime-300 text-black"
                         : "border-white/15 text-zinc-300 hover:border-lime-300/60 hover:text-white"
