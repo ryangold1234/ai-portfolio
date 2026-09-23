@@ -30,6 +30,9 @@ export type Project = {
   tagline: string;
   year: string;
   status: string;
+  monogram: string;
+  /** Path under public/ to the client's real logo image, when available. */
+  logo?: string;
   tech: string[];
   summary: string;
   problem: string;
@@ -53,6 +56,7 @@ export const projects: Project[] = [
     tagline: "Shopify catalog automation for a wholesale supply distributor",
     year: "2025",
     status: "Delivered — pipeline in use",
+    monogram: "AS",
     tech: ["OpenAI GPT", "Shopify", "Matrixify", "Python", "Web scraping"],
     summary:
       "Wholesale catalogs don't arrive clean. Apex Supply's came as supplier spreadsheets, price files, and inconsistent exports — thousands of products with no usable listings. I built the pipeline that fixes that end to end: raw Matrixify exports go in, publish-ready Shopify listings come out. Every product is matched to its supplier records, auto-categorized, and written up by a tuned GPT prompt system that knows a style-forward faucet from a compliance valve.",
@@ -131,6 +135,7 @@ export const projects: Project[] = [
     tagline: "Catalog-wide SEO rewrite for a wall-art e-commerce brand",
     year: "2026",
     status: "Delivered — catalog enriched",
+    monogram: "EC",
     tech: ["OpenAI GPT", "Shopify", "Matrixify", "Python"],
     summary:
       "The Apex playbook, deployed for a second client. EastCoastStudios sells wall art online — tens of thousands of listings with long, inconsistent titles and missing SEO metadata. I built the toolkit that rewrote the catalog for search: strict-format SEO titles and meta descriptions generated from raw Shopify exports, then imported back via Matrixify. Documented end to end so the non-technical owner runs it solo.",
@@ -211,6 +216,7 @@ export const projects: Project[] = [
     tagline: "Back-office automation for a Dallas real estate company",
     year: "2024",
     status: "Completed — summer engagement",
+    monogram: "JLK",
     tech: ["Yardi", "Python", "Document automation"],
     summary:
       "Three months inside a Dallas real estate company's back office. I organized the deeds and ownership papers for ~20 properties, worked day-to-day in Yardi, and built file-automation scripts that turned a chaotic archive into a system the team kept using. The engagement ended with a formal recommendation letter from company leadership.",
@@ -280,6 +286,8 @@ with open(LOG_FILE, "a") as log:
     tagline: "A podcast website plus an agent crew that runs the show",
     year: "2026",
     status: "Live",
+    monogram: "MM",
+    logo: "/visuals/midday-logo.jpg",
     tech: ["GitHub Pages", "Multi-agent rooms", "Agent delegation"],
     liveUrl: "https://alex22musi.github.io/midday-madness/",
     visuals: [
@@ -350,6 +358,7 @@ with open(LOG_FILE, "a") as log:
     tagline: "A multi-agent chat platform where AI assistants talk to each other",
     year: "2026",
     status: "Live — used daily",
+    monogram: "BR",
     tech: ["Next.js", "React Native", "Supabase", "Vercel", "The Odds API", "ESPN API"],
     summary:
       "A real-time chat platform where every person has an AI agent in the room — and the agents talk to each other, not just to their humans. It started as one shared group chat and grew into a multi-room system: private agent-to-agent rooms, an ESPN-settled betting leaderboard, a parlay builder with combined-odds math, and a sportsbook handoff flow. Live in production, used every day.",

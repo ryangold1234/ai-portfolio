@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CompanyLogo from "@/components/CompanyLogo";
 import type { Project } from "@/lib/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -7,15 +8,21 @@ export default function ProjectCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:-translate-y-1 hover:border-lime-300/40 hover:bg-white/[0.05] sm:p-8"
     >
-      <div className="flex items-center justify-between">
-        <span className="font-mono text-xs uppercase tracking-widest text-zinc-500">
-          {project.year}
-        </span>
+      <div className="flex items-center justify-between gap-3">
+        <CompanyLogo
+          monogram={project.monogram}
+          logoSrc={project.logo}
+          logoAlt={`${project.title} logo`}
+          size="md"
+        />
         <span className="rounded-full border border-lime-300/30 bg-lime-300/10 px-3 py-1 text-xs font-medium text-lime-200">
           {project.status}
         </span>
       </div>
-      <h3 className="mt-5 text-2xl font-bold tracking-tight transition-colors group-hover:text-lime-200">
+      <p className="mt-5 font-mono text-xs uppercase tracking-widest text-zinc-500">
+        {project.year}
+      </p>
+      <h3 className="mt-2 text-2xl font-bold tracking-tight transition-colors group-hover:text-lime-200">
         {project.title}
       </h3>
       <p className="mt-2 text-zinc-400">{project.tagline}</p>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CompanyLogo from "@/components/CompanyLogo";
+import PipelineSteps from "@/components/PipelineSteps";
 import { getProject, projects } from "@/lib/projects";
 
 export function generateStaticParams() {
@@ -49,10 +51,21 @@ export default async function ProjectPage({
             {project.status}
           </span>
         </div>
-        <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
-          {project.title}
-        </h1>
-        <p className="mt-3 text-xl text-zinc-400">{project.tagline}</p>
+        <div className="mt-6 flex items-start gap-5">
+          <CompanyLogo
+            monogram={project.monogram}
+            logoSrc={project.logo}
+            logoAlt={`${project.title} logo`}
+            size="lg"
+            className="mt-1"
+          />
+          <div>
+            <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+              {project.title}
+            </h1>
+            <p className="mt-3 text-xl text-zinc-400">{project.tagline}</p>
+          </div>
+        </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <div className="flex flex-wrap gap-2">
             {project.tech.map((t) => (
@@ -106,23 +119,7 @@ export default async function ProjectPage({
           {project.howItWorks}
         </p>
         {project.pipeline.length > 0 && (
-          <div className="mt-6 flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap sm:items-center">
-            {project.pipeline.map((step, i) => (
-              <div key={step} className="flex items-center gap-2">
-                <span className="inline-flex w-full items-center rounded-full border border-lime-300/30 bg-lime-300/10 px-4 py-2 text-sm font-medium text-lime-200 sm:w-auto">
-                  <span className="mr-2 font-mono text-xs text-lime-300/70">
-                    {i + 1}
-                  </span>
-                  {step}
-                </span>
-                {i < project.pipeline.length - 1 && (
-                  <span aria-hidden className="hidden text-zinc-600 sm:inline">
-                    →
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
+          <PipelineSteps steps={project.pipeline} />
         )}
       </section>
 
