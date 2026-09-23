@@ -56,6 +56,7 @@ const forBusinesses = [
 const facts = [
   ["School", "Indiana University, Kelley School of Business — Class of 2027"],
   ["Studying", "Finance + Real Estate"],
+  ["Banking", "Investment banking internship — Cascadia Capital, Austin (Summer 2026)"],
   ["Based in", "Bloomington, IN"],
   ["Building with", "Python, TypeScript, Next.js, LLMs, APIs, automation"],
 ];
@@ -128,6 +129,28 @@ export default function AboutPage() {
           Most AI talk is demos. The real win is systems that run for months
           without anyone thinking about them. I make and set up agents to do
           your work instead of you doing the work.
+        </p>
+      </div>
+
+      {/* The business side */}
+      <h2 className="mt-16 text-3xl font-bold tracking-tight sm:text-4xl">
+        The business side
+      </h2>
+      <div className="mt-6 space-y-5 text-lg leading-relaxed text-zinc-400">
+        <p>
+          The AI part is only half the story. Summer 2026 I interned in
+          investment banking at Cascadia Capital in Austin — the kind of work
+          where the model has to be exactly right and nobody cares how you got
+          there. Long hours, real pressure, and a front-row seat to how
+          businesses actually run: how money moves, what a P&amp;L really says,
+          and why &ldquo;good enough&rdquo; never is.
+        </p>
+        <p>
+          That&apos;s what I bring to every project. I&apos;ve done the grind
+          and I&apos;ll outwork the problem until it&apos;s solved — and I think
+          about your business like an owner, not a vendor. The goal isn&apos;t
+          a cool demo. It&apos;s a system that saves you real time and real
+          money, months after I hand it over.
         </p>
       </div>
 
