@@ -10,29 +10,29 @@ const offerings = [
   {
     n: "01",
     title: "AI agents that do the work",
-    desc: "Custom agents set up on your business that handle the repetitive work — drafting, organizing, following up — instead of you doing it. Built on your real workflow, handed over documented.",
-    example: "Proven in: Bot Room, a live multi-agent platform where AI assistants work alongside people in real time.",
+    desc: "Custom agents set up on your business to handle the repetitive work. Drafting, organizing, following up. Built on your real workflow and handed over documented.",
+    example: "Proven in Bot Room, a live multi-agent platform where AI assistants work alongside people in real time.",
     link: "/projects/bot-room",
   },
   {
     n: "02",
     title: "Ecommerce data automation",
-    desc: "Shopify catalog pipelines: messy supplier spreadsheets, price files, and exports in — clean, consistent, SEO-ready listings out. Your catalog starts maintaining itself.",
-    example: "Proven in: Apex Supply, a GPT-powered pipeline that turns raw supplier data into publish-ready Shopify listings.",
+    desc: "Shopify catalog pipelines. Messy supplier spreadsheets, price files, and exports go in. Clean, consistent, SEO-ready listings come out. Your catalog starts maintaining itself.",
+    example: "Proven at Apex Supply, a GPT-powered pipeline that turns raw supplier data into publish-ready Shopify listings.",
     link: "/projects/apex-supply",
   },
   {
     n: "03",
     title: "Back-office automation",
-    desc: "Documents, records, property data — audited, organized, and kept current automatically. I work inside your systems (Yardi, spreadsheets, file shares) and leave automation scripts your team keeps using.",
-    example: "Proven in: JLK, Ltd., where I organized deeds and ownership papers across ~20 properties for a Dallas real estate firm.",
+    desc: "Documents, records, property data. Audited, organized, and kept current automatically. I work inside your systems, Yardi, spreadsheets, file shares, and leave scripts your team keeps using.",
+    example: "Proven at JLK, Ltd., where I organized deeds and ownership papers across about 20 properties for a Dallas real estate firm.",
     link: "/projects/jlk",
   },
   {
     n: "04",
     title: "Agent-run operations",
-    desc: "A crew of AI agents that coordinates your content or ops workflow — posting updates, handling handoffs, running the playbook — without the email threads. You see a feed of what's done, not a pile of questions.",
-    example: "Proven in: Midday Madness, where an agent crew runs a live podcast's website and production operations.",
+    desc: "A crew of AI agents that runs your content or ops workflow. Posting updates, handling handoffs, running the playbook. No email threads. You see a feed of what's done, not a pile of questions.",
+    example: "Proven on Midday Madness, where an agent crew runs a live podcast's website and production.",
     link: "/projects/midday-madness",
   },
 ];
@@ -40,30 +40,30 @@ const offerings = [
 const steps = [
   {
     title: "Map the work",
-    desc: "A short audit to find the repetitive hours: where the team does the same thing over and over, and what it's costing you.",
+    desc: "A short audit to find the repetitive hours. Where the team does the same thing over and over, and what it's costing you.",
   },
   {
     title: "Build the system",
-    desc: "The agent or pipeline gets built and tested on your real workflow — your data, your tools, your edge cases — not a generic template.",
+    desc: "The agent or pipeline gets built and tested on your real workflow. Your data, your tools, your edge cases. Not a generic template.",
   },
   {
     title: "Hand over the keys",
-    desc: "It runs itself from day one. Your team gets trained, everything is documented, and there's no lock-in — you own it.",
+    desc: "It runs itself from day one. Your team gets trained, everything is documented, no lock-in. You own it.",
   },
 ];
 
 const faqs = [
   {
     q: "We're not technical. Is this for us?",
-    a: "Especially for you. My whole approach is built for operators, not engineers: you describe the problem in plain English, I handle the rest, and what you get is documented in plain English too.",
+    a: "Especially for you. My whole approach is built for operators, not engineers. You describe the problem in plain English, I handle the rest, and what you get is documented in plain English too.",
   },
   {
     q: "What does it cost?",
-    a: "Every engagement starts with a free discovery call and a fixed-price build — you'll know the full cost before committing to anything. Projects are scoped to be affordable for a small business, not an enterprise. Now booking projects for 2027.",
+    a: "Every engagement starts with a free discovery call and a fixed-price build. You know the full cost before committing to anything. Projects are scoped to be affordable for a small business, not an enterprise. Now booking projects for 2027.",
   },
   {
     q: "Will we depend on you forever?",
-    a: "No. Everything I build is documented and handed over. If you want me to keep an eye on things as your business changes, we can arrange that — but the system never needs me.",
+    a: "No. Everything I build is documented and handed over. If you want me to keep an eye on things as your business changes, we can arrange that. But the system never needs me.",
   },
 ];
 
@@ -78,8 +78,8 @@ export default function ServicesPage() {
           I make and set up agents to do your work instead of you doing work.
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-zinc-400">
-          Practical AI for small businesses — fixed price, built on your real
-          workflow, handed over documented so you own it.
+          Practical AI for small businesses. Fixed price. Built on how you
+          actually work. Documented and handed over so you own it.
         </p>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">

@@ -7,19 +7,19 @@ const featured = projects.filter((p) => p.featured);
 const services = [
   {
     title: "AI agents that do the work",
-    desc: "Custom agents set up on your business that handle the repetitive work — drafting, organizing, following up — instead of you doing it.",
+    desc: "Custom agents set up on your business that handle the repetitive stuff. Drafting, organizing, following up. Instead of you doing it.",
   },
   {
     title: "Ecommerce data automation",
-    desc: "Shopify catalog pipelines: supplier spreadsheets in, clean SEO-ready listings out. Proven on a wholesale supply catalog.",
+    desc: "Shopify catalog pipelines. Supplier spreadsheets in, clean SEO-ready listings out. Proven on a wholesale supply catalog.",
   },
   {
     title: "Back-office automation",
-    desc: "Documents, records, property data — organized and kept current automatically. Proven across ~20 properties at a Dallas real estate firm.",
+    desc: "Documents, records, property data. Organized and kept current automatically. Proven across about 20 properties at a Dallas real estate firm.",
   },
   {
     title: "Agent-run operations",
-    desc: "A crew of AI agents that coordinates your content or ops workflow — posting updates, handling handoffs — without the email threads. Proven running a live podcast.",
+    desc: "A crew of AI agents that runs your content or ops workflow. Posting updates, handling handoffs. No email threads. Proven running a live podcast.",
   },
 ];
 
@@ -42,10 +42,11 @@ export default function Home() {
             <span className="text-lime-300">your work for you</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-zinc-400 sm:text-xl">
-            I&apos;m Ryan Goldstein, an IU Kelley senior studying Finance and
-            Real Estate. I design AI systems — catalog automation, back-office
-            pipelines, agent crews — that take work off a business&apos;s plate
-            instead of adding to it.
+            I&apos;m Ryan Goldstein, a senior at IU Kelley studying Finance and
+            Real Estate. I build AI systems that take work off a
+            business&apos;s plate. Catalog automation, back-office pipelines,
+            agent crews. The kind of stuff that keeps working after I hand it
+            over.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -153,13 +154,13 @@ export default function Home() {
               A builder first, a consultant second
             </h2>
             <p className="mt-4 leading-relaxed text-zinc-400">
-              I&apos;m a senior at Indiana University&apos;s Kelley School of
-              Business, studying Finance and Real Estate. I got hooked building
-              AI that does real work — first organizing a real estate
-              firm&apos;s records, then automating a Shopify catalog, now
-              setting up agent crews that run operations on their own. I&apos;m
-              good at the part most AI talk skips: shipping something that
-              works every day, not just in a demo.
+              I&apos;m a senior at IU&apos;s Kelley School of Business, studying
+              Finance and Real Estate. I got into this building AI that does
+              real work. It started with organizing a real estate firm&apos;s
+              records, then automating a Shopify catalog, and now it&apos;s
+              agent crews that run operations on their own. The part I&apos;m
+              good at is the part most AI talk skips: shipping something that
+              still works six months later, not just in the demo.
             </p>
             <Link
               href="/about"
@@ -170,8 +171,8 @@ export default function Home() {
           </div>
           <div className="animate-drift rounded-3xl border border-white/10 bg-gradient-to-br from-lime-300/15 via-white/[0.04] to-transparent p-8 sm:p-10">
             <p className="text-xl font-medium leading-relaxed tracking-tight sm:text-2xl">
-              “The best AI demo is a system that&apos;s been running for six
-              months without anyone thinking about it.”
+              &ldquo;A demo that works once is easy. A system that works for six
+              months while nobody thinks about it, that&apos;s the job.&rdquo;
             </p>
             <p className="mt-6 font-mono text-xs uppercase tracking-widest text-zinc-500">
               — How I think about this work

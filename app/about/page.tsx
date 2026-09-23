@@ -6,32 +6,32 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/ryangoldstein7/";
 export const metadata = {
   title: "About — Ryan Goldstein",
   description:
-    "Ryan Goldstein builds AI agents that do your work for you — Shopify automation, back-office pipelines, and agent crews for small businesses.",
+    "Ryan Goldstein builds AI agents that do your work for you. Shopify automation, back-office pipelines, and agent crews for small businesses.",
 };
 
 const story = [
   {
     year: "2024",
-    title: "JLK, Ltd. — Dallas real estate",
-    text: "Summer 2024, inside the back office of a Dallas real estate firm: organizing the deeds and ownership papers for about 20 properties, working day-to-day in Yardi, and writing file-automation scripts that turned a chaotic archive into a system the team could actually use.",
+    title: "JLK, Ltd. · Dallas real estate",
+    text: "Summer 2024, inside the back office of a Dallas real estate firm. Organizing the deeds and ownership papers for about 20 properties, working in Yardi every day, and writing file-automation scripts that turned a chaotic archive into something the team could actually use.",
     link: "/projects/jlk",
   },
   {
     year: "2025",
-    title: "Apex Supply — wholesale distribution",
-    text: "Summer 2025, a GPT-powered pipeline for a wholesale supply distributor: Matrixify exports in, clean SEO-ready Shopify listings out — SKU matching across supplier price files, tuned product-description prompts, and scraping to fill the gaps.",
+    title: "Apex Supply · wholesale distribution",
+    text: "Summer 2025, a GPT-powered pipeline for a wholesale supply distributor. Matrixify exports in, clean SEO-ready Shopify listings out. SKU matching across supplier price files, tuned product-description prompts, and scraping to fill the gaps.",
     link: "/projects/apex-supply",
   },
   {
     year: "2026",
-    title: "EastCoastStudios — wall-art e-commerce",
-    text: "Same Shopify playbook, second client: a full-catalog SEO rewrite for a wall-art brand — tens of thousands of listings enriched with GPT-generated titles and meta descriptions, documented so the non-technical owner runs it solo.",
+    title: "EastCoastStudios · wall-art e-commerce",
+    text: "Same Shopify playbook, second client. A full-catalog SEO rewrite for a wall-art brand. Tens of thousands of listings enriched with GPT-generated titles and meta descriptions. I documented it all so the owner, who isn't technical, runs it himself.",
     link: "/projects/eastcoast-studios",
   },
   {
     year: "2026",
-    title: "Bot Room + Midday Madness — multi-agent platforms",
-    text: "Building multi-agent platforms: Bot Room, a real-time chat system where AI agents work alongside people every day, and an agent crew that runs the Midday Madness podcast's website and production operations.",
+    title: "Bot Room + Midday Madness · multi-agent platforms",
+    text: "Building multi-agent platforms. Bot Room is a real-time chat system where AI agents work alongside people every day. Plus an agent crew that runs the Midday Madness podcast's website and production operations.",
     link: "/projects/midday-madness",
   },
 ];
@@ -39,12 +39,12 @@ const story = [
 const forBusinesses = [
   {
     title: "AI agents that do the work",
-    text: "Custom agents set up on your business — drafting, organizing, following up — instead of you doing it.",
+    text: "Custom agents set up on your business. Drafting, organizing, following up. Instead of you doing it.",
     link: "/projects/bot-room",
   },
   {
     title: "Ecommerce data automation",
-    text: "Shopify catalog pipelines: supplier spreadsheets in, clean SEO-ready listings out.",
+    text: "Shopify catalog pipelines. Supplier spreadsheets in, clean SEO-ready listings out.",
     link: "/projects/apex-supply",
   },
   {
@@ -54,15 +54,15 @@ const forBusinesses = [
   },
   {
     title: "Agent-run operations",
-    text: "A crew of AI agents coordinating your content or ops workflow, without the email threads.",
+    text: "A crew of AI agents running your content or ops workflow. No email threads.",
     link: "/projects/midday-madness",
   },
 ];
 
 const facts = [
-  ["School", "Indiana University, Kelley School of Business — Class of 2027"],
+  ["School", "Indiana University, Kelley School of Business, Class of 2027"],
   ["Studying", "Finance + Real Estate"],
-  ["Banking", "Investment banking internship — Cascadia Capital, Austin (Summer 2026)"],
+  ["Banking", "Investment banking internship, Cascadia Capital, Austin (Summer 2026)"],
   ["Based in", "Bloomington, IN"],
   ["Building with", "Python, TypeScript, Next.js, LLMs, APIs, automation"],
 ];
@@ -85,20 +85,16 @@ export default function AboutPage() {
         />
         <div className="space-y-5 text-lg leading-relaxed text-zinc-400">
           <p>
-            I&apos;m Ryan Goldstein, a senior at Indiana University&apos;s Kelley
-            School of Business studying Finance and Real Estate (Class of 2027).
-            I&apos;m obsessed with building AI that does real work.
+            I&apos;m Ryan Goldstein. Senior at IU Kelley, class of 2027,
+            studying Finance and Real Estate. I build AI that does real work,
+            and I&apos;m pretty obsessed with it.
           </p>
           <p>
-            I didn&apos;t start with a theory of AI. I started with a mess — a
-            real estate firm&apos;s disorganized archive — and kept score on one
-            metric:{" "}
-            <span className="text-zinc-200">
-              does it still work six months later without me thinking about it?
-            </span>{" "}
-            Everything on this site passed that test. That&apos;s a rarer bar
-            than it sounds — most AI demos die the week after they&apos;re
-            recorded.
+            I didn&apos;t start with a theory of AI. I started with a mess: a
+            real estate firm&apos;s disorganized archive. And I kept score on
+            one thing. Does it still work six months later without me thinking
+            about it? Everything on this site passed that test. Most AI demos
+            die the week after they&apos;re recorded. Mine didn&apos;t.
           </p>
         </div>
       </div>
@@ -132,9 +128,10 @@ export default function AboutPage() {
           How I think about it
         </p>
         <p className="mt-4 text-xl font-medium leading-relaxed tracking-tight sm:text-2xl">
-          Most AI talk is demos. The real win is systems that run for months
-          without anyone thinking about them. I make and set up agents to do
-          your work instead of you doing the work.
+          Here&apos;s how I think about it. Most AI stuff you see is a demo.
+          What actually matters is the system that&apos;s still running six
+          months later while nobody thinks about it. I build agents and set
+          them up to do your work so you don&apos;t have to.
         </p>
       </div>
 
@@ -144,17 +141,16 @@ export default function AboutPage() {
       </h2>
       <div className="mt-6 space-y-5 text-lg leading-relaxed text-zinc-400">
         <p>
-          The AI part is only half the story. Summer 2026 I interned in
-          investment banking at Cascadia Capital in Austin — the kind of work
-          where the model has to be exactly right and nobody cares how you got
-          there. Long hours, real pressure, and a front-row seat to how
-          businesses actually run: how money moves, what a P&amp;L really says,
-          and why &ldquo;good enough&rdquo; never is.
+          The AI part is only half of it. Summer 2026 I interned in investment
+          banking at Cascadia Capital in Austin. Long hours, real pressure,
+          and work where the model has to be exactly right. I learned how
+          businesses actually run. How money moves, what a P&amp;L really
+          says, and why &ldquo;good enough&rdquo; never is.
         </p>
         <p>
           That&apos;s what I bring to every project. I&apos;ve done the grind
-          and I&apos;ll outwork the problem until it&apos;s solved — and I think
-          about your business like an owner, not a vendor. The goal isn&apos;t
+          and I&apos;ll outwork the problem until it&apos;s solved. And I think
+          about your business like an owner, not a vendor. The goal was never
           a cool demo. It&apos;s a system that saves you real time and real
           money, months after I hand it over.
         </p>

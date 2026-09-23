@@ -13,7 +13,7 @@ export default function Footer() {
           </h2>
           <p className="mt-4 max-w-xl text-zinc-400">
             I help small businesses automate the busywork, understand their
-            data, and put AI to work where it actually moves the needle.
+            data, and put AI to work where it actually pays off.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
