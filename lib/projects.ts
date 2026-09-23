@@ -88,7 +88,7 @@ export const projects: Project[] = [
       { value: "5,000", label: "products in full-catalog pull" },
       { value: "4", label: "smart prompt types (fashion / standard / compliance / default)" },
       { value: "7", label: "pipeline stages, export to import" },
-      { value: "≈800 hrs", label: "est. manual listing work automated" },
+      { value: "≈400 hrs", label: "est. manual listing work automated" },
     ],
     businessAngle:
       "This is the ecommerce offer in miniature: messy product data in, sellable listings out. Any Shopify store sitting on supplier spreadsheets gets the same treatment — a catalog that maintains itself.",
