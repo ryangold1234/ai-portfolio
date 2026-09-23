@@ -1,52 +1,54 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "AI Consulting Services — Ryan Goldstein",
   description:
-    "Practical AI consulting for small businesses: workflow automation, AI assistants, data pipelines, and real-time alerting.",
+    "I make and set up AI agents to do your work instead of you doing work: ecommerce automation, back-office pipelines, and agent-run operations for small businesses.",
 };
 
 const offerings = [
   {
     n: "01",
-    title: "Workflow automation",
-    desc: "The repetitive work eating your week — email triage, data entry, invoicing follow-ups, appointment scheduling — handled by systems that run themselves. You approve the design; the system does the doing.",
-    example: "Proven in: my recruiting pipeline and daily briefings, which run unattended every day.",
+    title: "AI agents that do the work",
+    desc: "Custom agents set up on your business that handle the repetitive work — drafting, organizing, following up — instead of you doing it. Built on your real workflow, handed over documented.",
+    example: "Proven in: Bot Room, a live multi-agent platform where AI assistants work alongside people in real time.",
+    link: "/projects/bot-room",
   },
   {
     n: "02",
-    title: "AI assistants & agents",
-    desc: "A chatbot or agent trained on your business — your services, your pricing, your policies — that answers customers instantly, books jobs, and escalates to a human when it should.",
-    example: "Proven in: Bot Room, a multi-agent platform where AI assistants converse with people and each other in real time.",
+    title: "Ecommerce data automation",
+    desc: "Shopify catalog pipelines: messy supplier spreadsheets, price files, and exports in — clean, consistent, SEO-ready listings out. Your catalog starts maintaining itself.",
+    example: "Proven in: Apex Supply, a GPT-powered pipeline that turns raw supplier data into publish-ready Shopify listings.",
+    link: "/projects/apex-supply",
   },
   {
     n: "03",
-    title: "Data pipelines & dashboards",
-    desc: "Your numbers live in five tools. I pull them into one place: a morning brief with yesterday's sales and today's priorities, weekly trend reviews, and alerts when something moves.",
-    example: "Proven in: my health analytics pipeline and daily intelligence brief.",
+    title: "Back-office automation",
+    desc: "Documents, records, property data — audited, organized, and kept current automatically. I work inside your systems (Yardi, spreadsheets, file shares) and leave automation scripts your team keeps using.",
+    example: "Proven in: JLK, Ltd., where I organized deeds and ownership papers across ~20 properties for a Dallas real estate firm.",
+    link: "/projects/jlk",
   },
   {
     n: "04",
-    title: "Real-time alerting",
-    desc: "Stop finding out late. Live monitoring that notifies the right person the moment it matters — low inventory, a late shipment, a deadline at risk, a KPI moving the wrong way.",
-    example: "Proven in: my transit ETA system, which texts 'leave now' at exactly the right minute.",
+    title: "Agent-run operations",
+    desc: "A crew of AI agents that coordinates your content or ops workflow — posting updates, handling handoffs, running the playbook — without the email threads. You see a feed of what's done, not a pile of questions.",
+    example: "Proven in: Midday Madness, where an agent crew runs a live podcast's website and production operations.",
+    link: "/projects/midday-madness",
   },
 ];
 
 const steps = [
   {
-    title: "Discover",
-    desc: "A free 30-minute call. We find the one or two places AI would actually pay for itself in your business — not a laundry list.",
+    title: "Map the work",
+    desc: "A short audit to find the repetitive hours: where the team does the same thing over and over, and what it's costing you.",
   },
   {
-    title: "Prototype",
-    desc: "Within two weeks you get a working prototype on your real data. You react to something real, not a slide deck.",
+    title: "Build the system",
+    desc: "The agent or pipeline gets built and tested on your real workflow — your data, your tools, your edge cases — not a generic template.",
   },
   {
-    title: "Deploy",
-    desc: "We harden the prototype, wire it into your tools, and document it so you're never dependent on me to keep it running.",
-  },
-  {
-    title: "Support",
-    desc: "A simple monthly check-in keeps everything healthy as your business changes. No lock-in, no black box.",
+    title: "Hand over the keys",
+    desc: "It runs itself from day one. Your team gets trained, everything is documented, and there's no lock-in — you own it.",
   },
 ];
 
@@ -57,11 +59,11 @@ const faqs = [
   },
   {
     q: "What does it cost?",
-    a: "Every engagement starts with a free discovery call and a fixed-price prototype — you'll know the full cost before committing to anything. Prototypes are scoped to be affordable for a small business, not an enterprise.",
+    a: "Every engagement starts with a free discovery call and a fixed-price build — you'll know the full cost before committing to anything. Projects are scoped to be affordable for a small business, not an enterprise. Now booking projects for 2027.",
   },
   {
     q: "Will we depend on you forever?",
-    a: "No. Everything I build is documented and handed over. The monthly support option exists because businesses prefer it, not because the system needs me.",
+    a: "No. Everything I build is documented and handed over. If you want me to keep an eye on things as your business changes, we can arrange that — but the system never needs me.",
   },
 ];
 
@@ -73,28 +75,33 @@ export default function ServicesPage() {
           Services
         </p>
         <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-          Practical AI for small businesses
+          I make and set up agents to do your work instead of you doing work.
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-zinc-400">
-          No hype, no six-figure transformation programs. I find the two or
-          three places AI pays for itself in your business and build them —
-          fixed price, working prototype in weeks.
+          Practical AI for small businesses — fixed price, built on your real
+          workflow, handed over documented so you own it.
         </p>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {offerings.map((o) => (
             <div
               key={o.n}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-8"
+              className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-8"
             >
               <p className="font-mono text-sm text-lime-300">{o.n}</p>
               <h2 className="mt-4 text-2xl font-bold tracking-tight">
                 {o.title}
               </h2>
               <p className="mt-3 leading-relaxed text-zinc-400">{o.desc}</p>
-              <p className="mt-5 border-t border-white/10 pt-4 text-sm text-zinc-500">
+              <p className="mt-5 flex-1 border-t border-white/10 pt-4 text-sm text-zinc-500">
                 {o.example}
               </p>
+              <Link
+                href={o.link}
+                className="mt-4 text-sm font-semibold text-lime-300 hover:underline"
+              >
+                See the case study <span aria-hidden>→</span>
+              </Link>
             </div>
           ))}
         </div>
@@ -108,7 +115,7 @@ export default function ServicesPage() {
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
             From first call to working system
           </h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {steps.map((s, i) => (
               <div key={s.title} className="relative">
                 <div className="flex items-center gap-3">

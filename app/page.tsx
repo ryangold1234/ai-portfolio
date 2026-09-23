@@ -6,20 +6,20 @@ const featured = projects.filter((p) => p.featured);
 
 const services = [
   {
-    title: "Workflow automation",
-    desc: "Kill the repetitive ops work — email triage, data entry, follow-ups, scheduling — with systems that run themselves.",
+    title: "AI agents that do the work",
+    desc: "Custom agents set up on your business that handle the repetitive work — drafting, organizing, following up — instead of you doing it.",
   },
   {
-    title: "AI assistants & agents",
-    desc: "Custom chatbots and agents trained on your business that answer customers, book jobs, and take action.",
+    title: "Ecommerce data automation",
+    desc: "Shopify catalog pipelines: supplier spreadsheets in, clean SEO-ready listings out. Proven on a wholesale supply catalog.",
   },
   {
-    title: "Data pipelines & dashboards",
-    desc: "Turn scattered spreadsheets and tools into one clear picture: morning briefs, KPI tracking, trend reviews.",
+    title: "Back-office automation",
+    desc: "Documents, records, property data — organized and kept current automatically. Proven across ~20 properties at a Dallas real estate firm.",
   },
   {
-    title: "Real-time alerting",
-    desc: "Know the moment something needs attention — inventory, deadlines, delays — instead of finding out late.",
+    title: "Agent-run operations",
+    desc: "A crew of AI agents that coordinates your content or ops workflow — posting updates, handling handoffs — without the email threads. Proven running a live podcast.",
   },
 ];
 
@@ -35,16 +35,17 @@ export default function Home() {
         />
         <div className="relative mx-auto max-w-6xl px-5 pb-24 pt-24 sm:px-8 sm:pt-32">
           <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
-            AI builder & consultant
+            AI automation for small business
           </p>
           <h1 className="mt-6 max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl">
-            I build AI systems that do{" "}
-            <span className="text-lime-300">real work</span>.
+            I build AI agents that do{" "}
+            <span className="text-lime-300">your work for you</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-zinc-400 sm:text-xl">
-            I&apos;m Ryan Goldstein, an IU senior who turns machine learning,
-            agents, and automation into tools people use every day. Now I bring
-            that to small businesses.
+            I&apos;m Ryan Goldstein, an IU Kelley senior studying Finance and
+            Real Estate. I design AI systems — catalog automation, back-office
+            pipelines, agent crews — that take work off a business&apos;s plate
+            instead of adding to it.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -62,10 +63,10 @@ export default function Home() {
           </div>
           <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">
             {[
-              ["5", "AI systems in production"],
-              ["Daily", "automations running"],
-              ["2", "platforms shipped live"],
-              ["2027", "consulting launches"],
+              ["4", "business AI systems shipped"],
+              ["≈20", "property records organized at JLK"],
+              ["3", "industries: supply, real estate, media"],
+              ["2024", "building for businesses since"],
             ].map(([n, label]) => (
               <div key={label} className="bg-[#0b0b0d] p-6">
                 <p className="text-3xl font-bold text-lime-300">{n}</p>
@@ -94,7 +95,7 @@ export default function Home() {
             All projects →
           </Link>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
@@ -111,8 +112,8 @@ export default function Home() {
             Practical AI, priced for businesses that can&apos;t hire a data team
           </h2>
           <p className="mt-4 max-w-2xl text-zinc-400">
-            Everything below is something I&apos;ve already built for myself, in
-            production. Your business gets the proven version.
+            Everything below is something I&apos;ve already shipped for a real
+            business. Yours gets the proven version.
           </p>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s, i) => (
@@ -153,10 +154,12 @@ export default function Home() {
             </h2>
             <p className="mt-4 leading-relaxed text-zinc-400">
               I&apos;m a senior at Indiana University&apos;s Kelley School of
-              Business, studying Finance and Real Estate. For the past two
-              years I&apos;ve been building AI systems that run my own life —
-              and I&apos;m good at the part most AI talk skips: shipping
-              something that works every day, not just in a demo.
+              Business, studying Finance and Real Estate. I got hooked building
+              AI that does real work — first organizing a real estate
+              firm&apos;s records, then automating a Shopify catalog, now
+              setting up agent crews that run operations on their own. I&apos;m
+              good at the part most AI talk skips: shipping something that
+              works every day, not just in a demo.
             </p>
             <Link
               href="/about"

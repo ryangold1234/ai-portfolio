@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ryan Goldstein — AI Builder & Consultant",
   description:
-    "Portfolio of AI systems built by Ryan Goldstein: multi-agent chat platforms, real-time prediction, workflow automation, and AI consulting for small businesses.",
+    "Ryan Goldstein builds AI agents that do your work for you — Shopify automation, back-office pipelines, and agent crews for small businesses.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

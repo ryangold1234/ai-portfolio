@@ -16,6 +16,92 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "apex-supply",
+    title: "Apex Supply",
+    tagline: "Shopify catalog automation for a wholesale supply distributor",
+    year: "2025",
+    status: "Delivered — pipeline in use",
+    tech: ["OpenAI GPT", "Shopify", "Matrixify", "Python", "Web scraping"],
+    summary:
+      "A GPT-powered pipeline that turns raw supplier data into publish-ready Shopify listings. It ingests Matrixify exports, cleans and normalizes the catalog, matches SKUs across supplier price files, and generates consistent, SEO-ready product descriptions — replacing hours of manual per-product work.",
+    problem:
+      "Apex Supply's Shopify catalog runs on supplier data that arrives as messy spreadsheets, price files, and inconsistent exports. Every product needed a clean, accurate, well-written listing — and doing that by hand across a wholesale catalog doesn't scale.",
+    built: [
+      "Matrixify export ingestion and cleaning — dedupe, normalize, and restructure raw catalog rows",
+      "SKU matching across supplier price files to attach accurate pricing and image links",
+      "GPT prompt system tuned for consistent product descriptions at catalog scale",
+      "Supplier data scraping and normalization for missing product attributes",
+      "Category taxonomy cleanup so the storefront stays organized as it grows",
+    ],
+    howItWorks:
+      "Supplier files and Matrixify exports go in one end; clean, structured product data comes out the other. The pipeline matches each product to its supplier records, fills gaps from scraped data, and drafts the description with a tuned prompt system — so new and updated products flow to Shopify without manual rewriting.",
+    results: [
+      "Initial automation draft delivered to the business in June 2025",
+      "Catalog-wide pipeline: raw supplier files in, publish-ready listings out",
+      "Turned repetitive per-product listing work into an automated flow",
+    ],
+    businessAngle:
+      "This is the ecommerce offer in miniature: messy product data in, sellable listings out. Any Shopify store sitting on supplier spreadsheets gets the same treatment — a catalog that maintains itself.",
+    featured: true,
+  },
+  {
+    slug: "jlk",
+    title: "JLK, Ltd.",
+    tagline: "Back-office automation for a Dallas real estate company",
+    year: "2024",
+    status: "Completed — summer engagement",
+    tech: ["Yardi", "Python", "Document automation"],
+    summary:
+      "Three months inside a Dallas real estate company's back office: organizing the deeds and ownership papers for about 20 properties, working in Yardi, and building file-automation scripts that turned a chaotic archive into a system the team could actually use.",
+    problem:
+      "Property records are the business — deeds, ownership papers, titles — but they lived in a disorganized archive where finding the right document meant digging. For a company managing around 20 properties, that friction touches every transaction.",
+    built: [
+      "Full audit and reorganization of deeds and ownership papers across ~20 properties",
+      "Day-to-day work inside Yardi, the company's property-management system",
+      "File-renaming and arranging scripts to standardize the document archive",
+      "A repeatable organization system so new documents land in the right place",
+    ],
+    howItWorks:
+      "Start with the mess: every deed, title policy, and ownership document accounted for. Then impose order — consistent naming, property-by-property structure, and scripts that do the repetitive arranging. The result isn't just a clean archive; it's a workflow the office keeps using.",
+    results: [
+      "Deeds and ownership papers for ~20 properties fully arranged and documented",
+      "Formal recommendation letter from company leadership for the work",
+      "Archive went from dig-through-it to look-it-up",
+    ],
+    businessAngle:
+      "Every real-estate office, law firm, and small business has a version of this archive. Document automation turns the filing cabinet — physical or digital — into infrastructure that works as fast as you do.",
+    featured: true,
+  },
+  {
+    slug: "midday-madness",
+    title: "Midday Madness",
+    tagline: "A podcast website plus an agent crew that runs the show",
+    year: "2026",
+    status: "Live",
+    tech: ["GitHub Pages", "Multi-agent rooms", "Agent delegation"],
+    summary:
+      "For the Midday Madness podcast: a full website built in days, plus something more interesting — an agent crew that runs the show's operations. Each host's AI agent lives in a dedicated coordination room, posting start/ship/blocked updates and handling handoffs, replacing the email threads that used to run production.",
+    problem:
+      "A podcast is a small media business: episodes to plan, a site to maintain, clips to ship, coordination across hosts. All of it ran on scattered messages and memory. The hosts needed the show to run like an operation, not a group chat.",
+    built: [
+      "Complete podcast website — episodes, clips, and show infrastructure",
+      "A dedicated agent coordination room for the podcast crew",
+      "Agents that post production updates (started / shipped / blocked) instead of status emails",
+      "Delegation workflows: site tasks assigned to agents and confirmed back when done",
+      "Handoff packets so a new host's agent can join the crew and get up to speed",
+    ],
+    howItWorks:
+      "The website is the storefront; the agent crew is the back office. When work needs doing — a site update, a production task — it's delegated to an agent in the crew room, which reports back when it's done. The hosts see a feed of what's happening instead of a pile of threads asking what's happening.",
+    results: [
+      "Podcast website designed and shipped with the hosts",
+      "Production coordination moved from scattered messages into one agent-run room",
+      "A repeatable pattern: any small content operation can run on a crew like this",
+    ],
+    businessAngle:
+      "This is the purest form of the offer: agents that do the work instead of you doing the work. A content business gets a staff that never sleeps; your business gets the same pattern applied to whatever eats your week.",
+    featured: true,
+  },
+  {
     slug: "bot-room",
     title: "Bot Room",
     tagline: "A multi-agent chat platform where AI assistants talk to each other",
@@ -41,121 +127,8 @@ export const projects: Project[] = [
       "Betting, parlays, and leaderboards settle themselves — zero manual scorekeeping",
     ],
     businessAngle:
-      "The same architecture powers customer-facing assistants: agents that know your business, talk to your customers in real time, and take action — booking, quoting, support — instead of just answering questions.",
+      "The same architecture powers customer-facing assistants: agents that know your business, talk to your customers in real time, and take action — booking, quoting, support. That's the whole thesis: agents that do the work instead of you doing the work.",
     featured: true,
-  },
-  {
-    slug: "route-1-eta",
-    title: "Route 1 Live ETA",
-    tagline: "Knowing exactly when the bus comes, down to the minute",
-    year: "2026",
-    status: "Running daily",
-    tech: ["Python", "GTFS-RT", "TomTom API", "Cron"],
-    summary:
-      "A real-time arrival system for Bloomington Transit's Route 1. It parses the agency's live vehicle feed, computes ETAs from scheduled times plus measured delay, folds in live road-traffic data, and texts a \"leave now\" alert so Ryan never waits outside for the bus again.",
-    problem:
-      "Ryan rides Route 1 every class day and hated waiting outside not knowing when the bus would show. His earlier machine-learning predictor never gave a reliable exact-minute answer — so he rebuilt the problem from first principles with live data instead of historical models.",
-    built: [
-      "Parser for the transit agency's GTFS real-time vehicle feed, including its non-standard data fields",
-      "ETA engine: scheduled arrival plus measured delay from live GPS positions",
-      "Live traffic integration — congested road segments ahead of the bus add expected delay",
-      "Fifteen automated checks per week across morning and evening class commutes",
-      "\"Leave now\" texts, delay heads-ups, and missed-bus notes — at most one message a day",
-    ],
-    howItWorks:
-      "Each check takes one live GPS snapshot of the bus, computes where it actually is versus schedule, then looks ahead at traffic on the segments the bus hasn't reached yet. If the bus will be at Ryan's stop within seven minutes, his phone buzzes. The system is deliberately honest about uncertainty until real arrival data tunes it further.",
-    results: [
-      "Running on class days across morning and evening commutes",
-      "Pure standard-library Python — no heavy dependencies, cheap to operate",
-      "Documented end-to-end so any future AI agent can maintain and extend it",
-    ],
-    businessAngle:
-      "This is operational alerting: live data in, a decision out, a human notified at exactly the right moment. The same pattern watches inventory, flags late shipments, or pings a manager when a KPI moves.",
-    featured: true,
-  },
-  {
-    slug: "recruiting-command-center",
-    title: "Recruiting Command Center",
-    tagline: "A job search that largely runs itself",
-    year: "2025 – 2026",
-    status: "Running daily",
-    tech: ["Notion API", "Gmail API", "Scheduled jobs"],
-    summary:
-      "A personal operating system for Ryan's investment-banking recruiting: every company, contact, call, interview, and deadline tracked in one place, watched over by nightly audits that flag stale follow-ups and a Monday-morning scan that surfaces closing application deadlines.",
-    problem:
-      "Dozens of firms, dozens of contacts, rolling deadlines — run it all from memory and things slip. Ryan needed a system with the memory of a chief of staff: nothing falls through, every follow-up has an owner and a date, and the week's risks surface before Monday coffee.",
-    built: [
-      "Structured pipeline: companies, contacts, calls, interviews, and deadlines in one database",
-      "Nightly audit that flags stale follow-ups, inconsistent records, and recurring failure patterns",
-      "Monday deadline watch — alerts only when a new application deadline is actually closing",
-      "Prep-capture-follow-up workflow for every networking call, with one-page briefs",
-    ],
-    howItWorks:
-      "The databases are the source of truth; scheduled jobs read them like a diligent analyst. The nightly audit diffs today's state against yesterday's and only speaks up when something is new, changed, or broken. The deadline watch checks every application date each Monday and stays silent when there's nothing closing — no noise, only signal.",
-    results: [
-      "Ran Ryan's full IB recruiting pipeline across two recruiting cycles",
-      "Catches slipped follow-ups and closing deadlines before they cost opportunities",
-      "Audit-only by design: it proposes, Ryan decides — nothing sends without him",
-    ],
-    businessAngle:
-      "Replace 'recruiting' with 'sales pipeline' or 'client onboarding' and this is a CRM that manages itself: automated follow-up hygiene, deadline risk radar, and briefings before every important conversation.",
-    featured: true,
-  },
-  {
-    slug: "daily-brief",
-    title: "Daily Intelligence Brief",
-    tagline: "Every morning, the day briefs itself",
-    year: "2025 – 2026",
-    status: "Running daily",
-    tech: ["Gmail API", "Google Calendar", "Notion API", "Scheduled jobs"],
-    summary:
-      "A 7:15 AM briefing assembled from Ryan's assignments, exams, email, and calendar — what's due, what's new, what needs attention — delivered before his day starts so he never opens five apps to figure out his morning.",
-    problem:
-      "The information Ryan needed each morning lived in five places: the assignment tracker, the exam schedule, two inboxes, and a calendar. Mornings were spent hunting for the day instead of starting it.",
-    built: [
-      "Daily 7:15 AM briefing pulling assignments, exams, school email, and calendar",
-      "Due-today vs. overdue distinction so priorities are obvious at a glance",
-      "School email read through a dedicated pipeline (Outlook-only by design)",
-      "Quiet by default: the brief is a briefing, not a notification firehose",
-    ],
-    howItWorks:
-      "A scheduled job gathers the day's raw material from each source, separates what's due today from what's already overdue, and composes one readable brief. It runs unattended every morning — Ryan's only job is to read it.",
-    results: [
-      "Delivered every morning through the school year",
-      "One read replaces checking five separate apps",
-      "Evolved over months of real use — the format is earned, not guessed",
-    ],
-    businessAngle:
-      "Every small business has a version of this: orders, appointments, cash position, staffing — scattered across tools. A morning brief turns scattered data into one decision-ready page.",
-    featured: false,
-  },
-  {
-    slug: "health-analytics",
-    title: "Health Analytics",
-    tagline: "Coaching from his own data",
-    year: "2026",
-    status: "Running weekly",
-    tech: ["Whoop API", "Apple HealthKit", "Scheduled jobs"],
-    summary:
-      "A personal health data pipeline combining Whoop recovery, sleep, and workout data with Apple Health metrics, reviewed every Sunday evening: sleep duration and bedtime regularity, training mix, resting heart rate trends — with concrete next-week targets.",
-    problem:
-      "Ryan wanted better sleep and more strength training, but 'try to sleep more' isn't a plan. He needed the same discipline he brings to data projects: baselines, trends, and a weekly review that says exactly what changed.",
-    built: [
-      "Direct Whoop API integration: recovery, sleep debt, workouts, resting HR",
-      "Apple HealthKit sync for steps, distance, and daily activity",
-      "Weekly Sunday review: sleep averages, training mix, trend deltas, next-week targets",
-      "Plain-spoken, data-led coaching — on demand plus the weekly review, never nagging",
-    ],
-    howItWorks:
-      "Workout and biometric data flow in continuously from both platforms. Each Sunday the review aggregates the week — average sleep, bedtime consistency, strength sessions vs. target, resting-HR trend — and sets specific targets for the week ahead. Progress is measured in trends, not single days.",
-    results: [
-      "Baselined a full month: ~6.5h sleep, 1:30–3 AM bedtimes, 1 strength session in 32 workouts",
-      "Weekly reviews turned vague goals into measurable targets",
-      "The same pipeline now supports a diet-tracking integration from food-order data",
-    ],
-    businessAngle:
-      "Wearables are just sensors; the value is the loop — collect, review, adjust. The same loop optimizes staffing schedules, equipment maintenance, or ad spend: instrument it, review it weekly, act on the trend.",
-    featured: false,
   },
 ];
 
