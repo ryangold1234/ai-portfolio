@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // TODO: Ryan's LinkedIn URL — LinkedIn button renders only when this is set.
-const LINKEDIN_URL = "";
+const LINKEDIN_URL = "https://www.linkedin.com/in/ryangoldstein7/";
 
 export const metadata = {
   title: "About — Ryan Goldstein",
