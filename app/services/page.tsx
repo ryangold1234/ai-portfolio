@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const metadata = {
   title: "AI Consulting Services — Ryan Goldstein",
   description:
