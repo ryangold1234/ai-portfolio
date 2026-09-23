@@ -57,6 +57,7 @@ export const projects: Project[] = [
     year: "2025",
     status: "Delivered — pipeline in use",
     monogram: "AS",
+    logo: "/logos/apex-supply.png",
     tech: ["OpenAI GPT", "Shopify", "Matrixify", "Python", "Web scraping"],
     summary:
       "Wholesale catalogs don't arrive clean. Apex Supply's came as supplier spreadsheets, price files, and inconsistent exports — thousands of products with no usable listings. I built the pipeline that fixes that end to end: raw Matrixify exports go in, publish-ready Shopify listings come out. Every product is matched to its supplier records, auto-categorized, and written up by a tuned GPT prompt system that knows a style-forward faucet from a compliance valve.",
