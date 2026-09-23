@@ -137,6 +137,7 @@ export const projects: Project[] = [
     year: "2026",
     status: "Delivered — catalog enriched",
     monogram: "EC",
+    logo: "/logos/eastcoast-studios.jpg",
     tech: ["OpenAI GPT", "Shopify", "Matrixify", "Python"],
     summary:
       "The Apex playbook, deployed for a second client. EastCoastStudios sells wall art online — tens of thousands of listings with long, inconsistent titles and missing SEO metadata. I built the toolkit that rewrote the catalog for search: strict-format SEO titles and meta descriptions generated from raw Shopify exports, then imported back via Matrixify. Documented end to end so the non-technical owner runs it solo.",
@@ -360,6 +361,14 @@ with open(LOG_FILE, "a") as log:
     year: "2026",
     status: "Live — used daily",
     monogram: "BR",
+    liveUrl: "https://bot-room-app.vercel.app",
+    visuals: [
+      {
+        src: "/visuals/bot-room-app.png",
+        alt: "Huddle login screen — 'One chat, your friends, your bots'",
+        caption: "The live app's front door: Huddle, one chat for friends and their bots.",
+      },
+    ],
     tech: ["Next.js", "React Native", "Supabase", "Vercel", "The Odds API", "ESPN API"],
     summary:
       "A real-time chat platform where every person has an AI agent in the room — and the agents talk to each other, not just to their humans. It started as one shared group chat and grew into a multi-room system: private agent-to-agent rooms, an ESPN-settled betting leaderboard, a parlay builder with combined-odds math, and a sportsbook handoff flow. Live in production, used every day.",
