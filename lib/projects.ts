@@ -11,6 +11,19 @@ export type Demo = {
   note: string;
 };
 
+export type CodeExcerpt = {
+  title: string;
+  language: string;
+  code: string;
+  note: string;
+};
+
+export type Visual = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -24,6 +37,9 @@ export type Project = {
   howItWorks: string;
   pipeline: string[];
   demo?: Demo;
+  codeExcerpt?: CodeExcerpt;
+  visuals?: Visual[];
+  liveUrl?: string;
   results: string[];
   kpis: Kpi[];
   businessAngle: string;
@@ -39,18 +55,18 @@ export const projects: Project[] = [
     status: "Delivered — pipeline in use",
     tech: ["OpenAI GPT", "Shopify", "Matrixify", "Python", "Web scraping"],
     summary:
-      "A GPT-powered pipeline that turns raw supplier data into publish-ready Shopify listings. It ingests Matrixify exports, cleans and normalizes the catalog, matches SKUs across supplier price files, and generates consistent, SEO-ready product descriptions — replacing hours of manual per-product work.",
+      "Wholesale catalogs don't arrive clean. Apex Supply's came as supplier spreadsheets, price files, and inconsistent exports — thousands of products with no usable listings. I built the pipeline that fixes that end to end: raw Matrixify exports go in, publish-ready Shopify listings come out. Every product is matched to its supplier records, auto-categorized, and written up by a tuned GPT prompt system that knows a style-forward faucet from a compliance valve.",
     problem:
-      "Apex Supply's Shopify catalog runs on supplier data that arrives as messy spreadsheets, price files, and inconsistent exports. Every product needed a clean, accurate, well-written listing — and doing that by hand across a wholesale catalog doesn't scale.",
+      "Apex Supply sells through Shopify, but its catalog runs on supplier data that arrives as messy spreadsheets, price files, and inconsistent exports. Every product needed a clean, accurate, well-written listing — title, description, specs, SEO. Doing that by hand across a wholesale catalog doesn't scale: it's slow, inconsistent, and every new supplier file restarts the work from zero.",
     built: [
-      "Matrixify export ingestion and cleaning — dedupe, normalize, and restructure raw catalog rows",
-      "SKU matching across supplier price files to attach accurate pricing and image links",
-      "GPT prompt system tuned for consistent product descriptions at catalog scale",
-      "Supplier data scraping and normalization for missing product attributes",
-      "Category taxonomy cleanup so the storefront stays organized as it grows",
+      "Matrixify export ingestion — dedupe, normalize, and restructure raw catalog rows into a clean working set",
+      "SKU matching across supplier price files to attach accurate pricing, images, and attributes",
+      "A six-step smart prompt router that picks the right GPT voice per product: fashion, standard, compliance, or default",
+      "Supplier data scraping to fill gaps where the exports came up short",
+      "Category taxonomy cleanup so the storefront stays organized as the catalog grows",
     ],
     howItWorks:
-      "Supplier files and Matrixify exports go in one end; clean, structured product data comes out the other. The pipeline matches each product to its supplier records, fills gaps from scraped data, and drafts the description with a tuned prompt system — so new and updated products flow to Shopify without manual rewriting.",
+      "Supplier files and Matrixify exports go in one end; clean, structured product data comes out the other. The pipeline dedupes and normalizes the rows, matches each product to its supplier records, detects its category and manufacturer, routes it to the right prompt, and drafts the description — Body HTML plus SEO meta — ready for Matrixify import back into Shopify. Anything the router can't classify gets logged for human review instead of guessed at.",
     pipeline: [
       "Matrixify export in",
       "Clean + dedupe",
@@ -79,6 +95,21 @@ export const projects: Project[] = [
       ],
       note: "Simplified example with synthetic data — the real catalog stays private.",
     },
+    codeExcerpt: {
+      title: "The smart prompt router — from the actual codebase",
+      language: "python",
+      code: `def smart_prompt_type(collection, title, tags, manufacturer):
+    # Step 1: Exact collection match
+    # Step 2: Fuzzy / partial collection match
+    # Step 3: Scan ALL tags for a collection mapping
+    # Step 4: Fallback keyword match in title + tags
+    # Step 5: Heuristics — Faucet -> fashion,
+    #         PEX -> compliance, Valve -> standard
+    # Step 6: Log the unmapped for human review,
+    #         never guess
+    ...`,
+      note: "Trimmed for readability — the real function runs all six steps per product.",
+    },
     results: [
       "Initial automation draft delivered to the business in June 2025",
       "Catalog-wide pipeline: raw supplier files in, publish-ready listings out",
@@ -91,7 +122,7 @@ export const projects: Project[] = [
       { value: "≈400 hrs", label: "est. manual listing work automated" },
     ],
     businessAngle:
-      "This is the ecommerce offer in miniature: messy product data in, sellable listings out. Any Shopify store sitting on supplier spreadsheets gets the same treatment — a catalog that maintains itself.",
+      "This is the ecommerce offer in miniature: messy product data in, sellable listings out. Any Shopify store sitting on supplier spreadsheets gets the same treatment — a catalog that maintains itself instead of eating someone's week.",
     featured: true,
   },
   {
@@ -102,19 +133,19 @@ export const projects: Project[] = [
     status: "Delivered — catalog enriched",
     tech: ["OpenAI GPT", "Shopify", "Matrixify", "Python"],
     summary:
-      "The same Shopify playbook, second client: a toolkit that rewrites an entire wall-art catalog for search. Concise SEO titles and meta descriptions generated from raw Shopify exports, then imported back via Matrixify — built so a non-technical owner can run the whole thing solo.",
+      "The Apex playbook, deployed for a second client. EastCoastStudios sells wall art online — tens of thousands of listings with long, inconsistent titles and missing SEO metadata. I built the toolkit that rewrote the catalog for search: strict-format SEO titles and meta descriptions generated from raw Shopify exports, then imported back via Matrixify. Documented end to end so the non-technical owner runs it solo.",
     problem:
-      "Tens of thousands of wall-art listings with long, inconsistent titles and missing SEO metadata. Search traffic was on the table, but rewriting the catalog by hand — one listing at a time — was never going to happen.",
+      "Search was leaving money on the table. Tens of thousands of wall-art listings had bloated, keyword-stuffed titles and no SEO metadata — invisible to the exact searches that drive art sales. Rewriting the catalog by hand, one listing at a time, was never going to happen.",
     built: [
       "SEO title + meta description generation from raw Shopify CSV exports",
-      "Strict title format enforced by prompt: city/landmark + subject + product type, 45–65 chars, no brand, no fluff",
+      "A strict title format enforced by prompt: city/landmark + subject + product type, 45–65 characters, no brand, no fluff",
       "Handle-deduped processing with 10 concurrent GPT workers, 3 automatic retries, and safe fallbacks that never block a run",
       "Test mode (15–50 listings) so output quality is confirmed before full-catalog runs",
-      "Matrixify update-mode import flow — only SEO fields are touched, nothing else overwritten",
+      "Matrixify update-mode import — only the SEO fields are touched, nothing else overwritten",
       "Non-coder documentation: setup, usage, troubleshooting, and glossary",
     ],
     howItWorks:
-      "Export the catalog from Shopify as a CSV. The toolkit dedupes by product handle, rewrites each title and description against a strict SEO format with concurrent GPT calls, and writes the enriched CSV back. Import via Matrixify in update mode and only the SEO fields change. A small test batch runs first; safe fallbacks mean a failed API call never blocks the batch.",
+      "Export the catalog from Shopify as a CSV. The toolkit dedupes by product handle, rewrites each title and description against a strict SEO format with concurrent GPT calls, and writes the enriched CSV back. Import via Matrixify in update mode and only the SEO fields change. A small test batch runs first to confirm quality; safe fallbacks mean a failed API call never blocks the batch.",
     pipeline: [
       "Shopify CSV export",
       "Dedupe by handle",
@@ -139,6 +170,26 @@ export const projects: Project[] = [
       ],
       note: "Simplified example with synthetic data — the real catalog stays private.",
     },
+    codeExcerpt: {
+      title: "The SEO title prompt — from the actual codebase",
+      language: "python",
+      code: `def build_seo_title_prompt(title: str) -> str:
+    return (
+        "You are an SEO title writer for a wall art "
+        "e-commerce catalog.\\n\\n"
+        "Formatting Rules:\\n"
+        "- Format: City or landmark + subject "
+        "  + product type.\\n"
+        "- Exactly one product type: wall art, "
+        "  print, poster, or canvas.\\n"
+        "- Do not include the brand name.\\n"
+        "- Use Title Case.\\n"
+        "- Target 45–65 characters (hard max 75).\\n"
+        "- No emojis, no filler like "
+        "  'high quality'.\\n"
+        ...`,
+      note: "The prompt is the product: every formatting rule is load-bearing.",
+    },
     results: [
       "≈30,000 product listings enriched with SEO titles + descriptions across 3 batched runs (March 2026)",
       "Full-catalog SEO coverage the team could never have produced by hand",
@@ -151,7 +202,7 @@ export const projects: Project[] = [
       { value: "≈1,000 hrs", label: "est. manual SEO work automated" },
     ],
     businessAngle:
-      "Built once, deployed twice: the Apex pipeline's pattern, adapted to a totally different vertical. Any Shopify store with a big catalog has this exact problem — listings exist, but search can't find them.",
+      "Built once, deployed twice: the Apex pipeline's pattern, adapted to a totally different vertical in days, not months. Any Shopify store with a big catalog has this exact problem — the listings exist, but search can't find them.",
     featured: true,
   },
   {
@@ -162,17 +213,17 @@ export const projects: Project[] = [
     status: "Completed — summer engagement",
     tech: ["Yardi", "Python", "Document automation"],
     summary:
-      "Three months inside a Dallas real estate company's back office: organizing the deeds and ownership papers for about 20 properties, working in Yardi, and building file-automation scripts that turned a chaotic archive into a system the team could actually use.",
+      "Three months inside a Dallas real estate company's back office. I organized the deeds and ownership papers for ~20 properties, worked day-to-day in Yardi, and built file-automation scripts that turned a chaotic archive into a system the team kept using. The engagement ended with a formal recommendation letter from company leadership.",
     problem:
-      "Property records are the business — deeds, ownership papers, titles — but they lived in a disorganized archive where finding the right document meant digging. For a company managing around 20 properties, that friction touches every transaction.",
+      "Property records are the business — deeds, ownership papers, title policies — but they lived in a disorganized archive where finding the right document meant digging through scans named things like scan0032.pdf. For a company managing ~20 properties, that friction touches every transaction, every closing, every audit.",
     built: [
       "Full audit and reorganization of deeds and ownership papers across ~20 properties",
       "Day-to-day work inside Yardi, the company's property-management system",
-      "File-renaming and arranging scripts to standardize the document archive",
+      "File-renaming and arranging scripts that enforce the naming standard on every document",
       "A repeatable organization system so new documents land in the right place",
     ],
     howItWorks:
-      "Start with the mess: every deed, title policy, and ownership document accounted for. Then impose order — consistent naming, property-by-property structure, and scripts that do the repetitive arranging. The result isn't just a clean archive; it's a workflow the office keeps using.",
+      "Start with the mess: every deed, title policy, and ownership document accounted for. Then impose order — consistent naming, property-by-property structure, and scripts that do the repetitive arranging, with every move logged. The result isn't just a clean archive; it's a workflow the office keeps using after you're gone.",
     pipeline: [
       "Audit the archive",
       "Property-by-property structure",
@@ -196,6 +247,18 @@ export const projects: Project[] = [
       ],
       note: "Illustrative filenames — real property records stay private.",
     },
+    codeExcerpt: {
+      title: "The rename-and-move script — from the actual codebase",
+      language: "python",
+      code: `# ToRename -> rename -> ReadyToUpload,
+# with a log of every move
+shutil.move(original_path, new_path)
+
+with open(LOG_FILE, "a") as log:
+    log.write(f"[{new_name}] moved "
+              f"from ToRename to ReadyToUpload\\n")`,
+      note: "Paths redacted. Every rename is validated, moved, and logged — or it fails loudly.",
+    },
     results: [
       "Deeds and ownership papers for ~20 properties fully arranged and documented",
       "Formal recommendation letter from company leadership for the work",
@@ -208,7 +271,7 @@ export const projects: Project[] = [
       { value: "1", label: "formal recommendation letter" },
     ],
     businessAngle:
-      "Every real-estate office, law firm, and small business has a version of this archive. Document automation turns the filing cabinet — physical or digital — into infrastructure that works as fast as you do.",
+      "Every real-estate office, law firm, and small business has a version of this archive. The work isn't glamorous — it's load-bearing. Document automation turns the filing cabinet, physical or digital, into infrastructure that works as fast as you do.",
     featured: true,
   },
   {
@@ -218,12 +281,25 @@ export const projects: Project[] = [
     year: "2026",
     status: "Live",
     tech: ["GitHub Pages", "Multi-agent rooms", "Agent delegation"],
+    liveUrl: "https://alex22musi.github.io/midday-madness/",
+    visuals: [
+      {
+        src: "/visuals/midday-logo.jpg",
+        alt: "Midday Madness show logo",
+        caption: "Show branding from the live site.",
+      },
+      {
+        src: "/visuals/mm-clip-still.jpg",
+        alt: "Still from the 'Texas A&M Is Overrated' clip",
+        caption: "A real clip from the site — captioned, under a minute, built to travel.",
+      },
+    ],
     summary:
-      "For the Midday Madness podcast: a full website built in days, plus something more interesting — an agent crew that runs the show's operations. Each host's AI agent lives in a dedicated coordination room, posting start/ship/blocked updates and handling handoffs, replacing the email threads that used to run production.",
+      "For the Midday Madness podcast I shipped a full website in days — episodes, clips, and show infrastructure — then built the more interesting half: an agent crew that runs the show's operations. Each host's AI agent lives in a dedicated coordination room, posting start/ship/blocked updates and handling handoffs. The scattered messages and email threads that used to run production are gone.",
     problem:
-      "A podcast is a small media business: episodes to plan, a site to maintain, clips to ship, coordination across hosts. All of it ran on scattered messages and memory. The hosts needed the show to run like an operation, not a group chat.",
+      "A podcast is a small media business: episodes to plan, a site to maintain, clips to ship, coordination across hosts. All of it ran on scattered messages and memory — 'did anyone post the episode?', 'who has the clips?' The hosts needed the show to run like an operation, not a group chat.",
     built: [
-      "Complete podcast website — episodes, clips, and show infrastructure",
+      "Complete podcast website — episodes, clips, and show infrastructure, live on GitHub Pages",
       "A dedicated agent coordination room for the podcast crew",
       "Agents that post production updates (started / shipped / blocked) instead of status emails",
       "Delegation workflows: site tasks assigned to agents and confirmed back when done",
@@ -276,9 +352,9 @@ export const projects: Project[] = [
     status: "Live — used daily",
     tech: ["Next.js", "React Native", "Supabase", "Vercel", "The Odds API", "ESPN API"],
     summary:
-      "A real-time chat platform for Ryan and his friends where every person has an AI agent in the room. It started as one shared group chat and grew into a multi-room system with private agent-to-agent rooms, a live ESPN-settled betting leaderboard, a parlay builder with combined-odds math, and a sportsbook handoff flow.",
+      "A real-time chat platform where every person has an AI agent in the room — and the agents talk to each other, not just to their humans. It started as one shared group chat and grew into a multi-room system: private agent-to-agent rooms, an ESPN-settled betting leaderboard, a parlay builder with combined-odds math, and a sportsbook handoff flow. Live in production, used every day.",
     problem:
-      "Group chats are where Ryan and his friends live — picks, debates, bets, banter. But every AI assistant lived in its own silo. The question was: what happens when you put the agents in the room together and let them talk to each other, not just to their humans?",
+      "Group chats are where Ryan and his friends live — picks, debates, bets, banter. But every AI assistant lived in its own silo, only ever talking to its own human. The question was: what happens when you put the agents in the room together and let them talk to each other?",
     built: [
       "Group chat, DMs, and podcast rooms on a custom agent message bus with push webhooks",
       "Private rooms where agents converse directly, with every sender clearly labeled",

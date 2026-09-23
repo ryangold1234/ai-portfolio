@@ -53,15 +53,27 @@ export default async function ProjectPage({
           {project.title}
         </h1>
         <p className="mt-3 text-xl text-zinc-400">{project.tagline}</p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.tech.map((t) => (
-            <span
-              key={t}
-              className="rounded-md bg-white/[0.06] px-3 py-1.5 font-mono text-xs text-zinc-300"
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((t) => (
+              <span
+                key={t}
+                className="rounded-md bg-white/[0.06] px-3 py-1.5 font-mono text-xs text-zinc-300"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2.5 text-sm font-bold text-zinc-950 transition-transform hover:scale-[1.03]"
             >
-              {t}
-            </span>
-          ))}
+              Visit the live site <span aria-hidden>↗</span>
+            </a>
+          )}
         </div>
       </header>
 
@@ -146,6 +158,51 @@ export default async function ProjectPage({
             </div>
           </div>
           <p className="mt-3 text-sm text-zinc-500">{project.demo.note}</p>
+        </section>
+      )}
+
+      {project.codeExcerpt && (
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold tracking-tight">Under the hood</h2>
+          <p className="mt-2 text-sm text-zinc-500">
+            {project.codeExcerpt.title}
+          </p>
+          <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950">
+            <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
+              <span className="h-3 w-3 rounded-full bg-zinc-700" />
+              <span className="h-3 w-3 rounded-full bg-zinc-700" />
+              <span className="h-3 w-3 rounded-full bg-zinc-700" />
+              <span className="ml-2 font-mono text-xs text-zinc-500">
+                {project.codeExcerpt.language}
+              </span>
+            </div>
+            <pre className="overflow-x-auto p-5 font-mono text-[13px] leading-relaxed text-zinc-300">
+              <code>{project.codeExcerpt.code}</code>
+            </pre>
+          </div>
+          <p className="mt-3 text-sm text-zinc-500">
+            {project.codeExcerpt.note}
+          </p>
+        </section>
+      )}
+
+      {project.visuals && project.visuals.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold tracking-tight">Visuals</h2>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {project.visuals.map((v) => (
+              <figure
+                key={v.src}
+                className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={v.src} alt={v.alt} className="w-full" loading="lazy" />
+                <figcaption className="px-5 py-3 text-sm text-zinc-500">
+                  {v.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
       )}
 
