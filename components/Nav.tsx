@@ -30,12 +30,12 @@ export default function Nav() {
               </Link>
             ))}
           </div>
-          <a
-            href="mailto:rygold04@gmail.com?subject=AI%20consulting%20inquiry"
+          <Link
+            href="/work-with-me"
             className="ml-2 rounded-full bg-lime-300 px-4 py-2 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
           >
             Work with me
-          </a>
+          </Link>
         </div>
       </nav>
     </header>
