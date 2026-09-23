@@ -82,7 +82,7 @@ export default function Home() {
         <div className="flex items-end justify-between">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
-              Selected work
+              01 — Selected work
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               Systems running in the real world
@@ -106,7 +106,7 @@ export default function Home() {
       <section className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
-            For small businesses
+            02 — Services
           </p>
           <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
             Practical AI, priced for businesses that can&apos;t hire a data team
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-lime-300">
-              About
+              03 — About
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               A builder first, a consultant second

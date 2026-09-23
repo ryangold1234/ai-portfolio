@@ -1,4 +1,7 @@
 import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
+import Toolkit from "@/components/Toolkit";
+import Testimonials from "@/components/Testimonials";
 
 // TODO: Ryan's LinkedIn URL — LinkedIn button renders only when this is set.
 const LINKEDIN_URL = "https://www.linkedin.com/in/ryangoldstein7/";
@@ -103,14 +106,17 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Story */}
-      <h2 className="mt-16 text-3xl font-bold tracking-tight sm:text-4xl">
-        The arc so far
-      </h2>
+      {/* 01 — Story */}
+      <SectionHeading
+        index="01"
+        kicker="The work"
+        title="The arc so far"
+        className="mt-16"
+      />
       <div className="mt-8 space-y-4">
         {story.map((s) => (
           <Link
-            key={s.year}
+            key={s.year + s.title}
             href={s.link}
             className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:-translate-y-0.5 hover:border-lime-300/40 sm:p-8"
           >
@@ -138,10 +144,24 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* The business side */}
-      <h2 className="mt-16 text-3xl font-bold tracking-tight sm:text-4xl">
-        The business side
-      </h2>
+      {/* 02 — Toolkit */}
+      <SectionHeading
+        index="02"
+        kicker="Toolkit"
+        title="What I build with"
+        className="mt-16"
+      />
+      <div className="mt-8">
+        <Toolkit />
+      </div>
+
+      {/* 03 — Experience */}
+      <SectionHeading
+        index="03"
+        kicker="Experience"
+        title="The business side"
+        className="mt-16"
+      />
       <div className="mt-6 space-y-5 text-lg leading-relaxed text-zinc-400">
         <p>
           The AI part is only half the story. Summer 2026 I interned in
@@ -160,10 +180,24 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* What I do for businesses */}
-      <h2 className="mt-16 text-3xl font-bold tracking-tight sm:text-4xl">
-        What I do for businesses
-      </h2>
+      {/* 04 — Recognition */}
+      <SectionHeading
+        index="04"
+        kicker="Recognition"
+        title="What people say"
+        className="mt-16"
+      />
+      <div className="mt-8">
+        <Testimonials />
+      </div>
+
+      {/* 05 — Services */}
+      <SectionHeading
+        index="05"
+        kicker="Services"
+        title="What I do for businesses"
+        className="mt-16"
+      />
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         {forBusinesses.map((b) => (
           <Link
@@ -198,10 +232,13 @@ export default function AboutPage() {
         ))}
       </div>
 
-      {/* Connect */}
-      <h2 className="mt-16 text-3xl font-bold tracking-tight sm:text-4xl">
-        Connect
-      </h2>
+      {/* 06 — Connect */}
+      <SectionHeading
+        index="06"
+        kicker="Connect"
+        title="Get in touch"
+        className="mt-16"
+      />
       <div className="mt-8 flex flex-wrap gap-3">
         <a
           href={LINKEDIN_URL}
